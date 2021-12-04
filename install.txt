@@ -1,0 +1,66 @@
+---------------------------------------------------
+Установка бота Spreader:
+
+sudo apt-get update -y
+sudo apt-get upgrade -y
+wget https://github.com/TheSwanBlack/Spreader/releases/download/v0.1.0-alpha/Spreader_v0.1.0-alpha.tar.xz
+tar xf Spreader_v0.1.0-alpha.tar.xz
+
+
+Настройка параметров:
+
+sudo nano /root/Spreader/constant.ini
+
+
+Добавляем в файл:
+
+[API]
+APIKEY = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+SECRTKEY = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+нажимаем:
+crt+x
+y
+Enter
+
+------------------------------------------------
+Добавляем в автозапуск:
+
+sudo nano /etc/rc.local
+
+Добавляем в файл:
+
+#!/bin/bash
+/root/Spreader/Spreader &
+
+нажимаем:
+crt+x
+y
+Enter
+
+sudo chmod -v +x /etc/rc.local
+sudo systemctl enable rc-local.service
+sudo reboot
+
+------------------------------------------------
+Удаляем из автозапуска:
+
+sudo nano /etc/rc.local
+
+Удаляем:
+
+#!/bin/bash
+/root/Spreader/Spreader &
+
+нажимаем:
+crt+x
+y
+Enter
+
+sudo reboot
+------------------------------------------------
+Удаление перед обновлением:
+
+sudo rm -rf Spreader/
+sudo reboot
+
