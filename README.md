@@ -16,34 +16,51 @@
 #
 
 [BASE]
+
 HOST = https://www.lbkex.net
+
 PORT = 80
 
 [WEBSOCKET]
+
 URL = wss://www.lbkex.net/ws/V2/
 
 [API]
+
 APIKEY = «Создаётся в личном кабинете LBank»
+
 SECRTKEY = «Создаётся в личном кабинете LBank»
 
 [START_STOP]
+
 # Bot operation. When 'START_STOP = START' the bot works.
+
 START_STOP = START
 
 [FEES]
+
 # Trade rate (%)
+
 TAKERFEE = 0.1
 
 [SIZE]
+
 # If 'FIXED = True' we use values from '[STEP]SIZESTEP'
+
 FIXED = True
+
 # If 'FIXED != True'
+
 SIZE = 1000
+
 STEP = 0.00025
 
 [STEP]
+
 # Let's list 'SIZE' and 'STEP' with a space. Add a new value 'SIZESTEP' on a new line.
+
 # There should be no duplicates 'SIZE'
+
 SIZESTEP = 1000 0.00025
 
 
