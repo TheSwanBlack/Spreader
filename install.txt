@@ -3,8 +3,8 @@
 
 sudo apt-get update -y
 sudo apt-get upgrade -y
-wget https://github.com/TheSwanBlack/Spreader/releases/download/v0.1.0-alpha/Spreader_v0.1.0-alpha.tar.xz
-tar xf Spreader_v0.1.0-alpha.tar.xz
+wget https://github.com/TheSwanBlack/Spreader/releases/download/v0.2.1-beta/Spreader_v0.2.1-beta.tar.xz
+tar xf Spreader_v0.2.1-beta.tar.xz
 
 
 Настройка параметров:
@@ -31,7 +31,7 @@ sudo nano /etc/rc.local
 Добавляем в файл:
 
 #!/bin/bash
-/root/Spreader/Spreader &
+/root/Spreader/start.sh
 
 нажимаем:
 crt+x
@@ -42,6 +42,10 @@ sudo chmod -v +x /etc/rc.local
 sudo systemctl enable rc-local.service
 sudo reboot
 
+
+# запускаем
+bash /root/Spreader/start.sh
+
 ------------------------------------------------
 Удаляем из автозапуска:
 
@@ -50,7 +54,7 @@ sudo nano /etc/rc.local
 Удаляем:
 
 #!/bin/bash
-/root/Spreader/Spreader &
+/root/Spreader/start.sh
 
 нажимаем:
 crt+x
@@ -61,6 +65,12 @@ sudo reboot
 ------------------------------------------------
 Удаление перед обновлением:
 
+# Удаляем старую версию
+killall start.sh
+killall Spreader
 sudo rm -rf Spreader/
-sudo reboot
+sudo rm Spreader_v0.1.0-alpha.tar.xz
+# или
+sudo rm Spreader_v0.2.0-alpha.tar.xz
 
+sudo reboot
