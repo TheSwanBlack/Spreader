@@ -11,7 +11,6 @@ tar xf Spreader_v0.2.1-beta.tar.xz
 
 sudo nano /root/Spreader/constant.ini
 
-
 Добавляем в файл:
 
 [API]
