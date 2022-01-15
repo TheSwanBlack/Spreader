@@ -19,6 +19,7 @@ APIKEY = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 SECRTKEY = xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 нажимаем:
+
 crt+x
 y
 Enter
@@ -26,37 +27,35 @@ Enter
 ------------------------------------------------
 Добавляем в автозапуск:
 
-sudo nano /etc/rc.local
+crontab -e
 
-Добавляем в файл:
+В конце файла добавляем строку:
 
-#!/bin/bash
-/root/Spreader/start.sh
+@reboot /root/Spreader/start.sh
 
 нажимаем:
+
 crt+x
 y
 Enter
 
-sudo chmod -v +x /etc/rc.local
-sudo systemctl enable rc-local.service
 sudo reboot
 
+# запускаем без автозапуска:
 
-# запускаем
 bash /root/Spreader/start.sh
 
 ------------------------------------------------
 Удаляем из автозапуска:
 
-sudo nano /etc/rc.local
+crontab -e
 
-Удаляем:
+удаляем строку:
 
-#!/bin/bash
-/root/Spreader/start.sh
+@reboot /root/Spreader/start.sh
 
 нажимаем:
+
 crt+x
 y
 Enter
