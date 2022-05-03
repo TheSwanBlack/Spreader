@@ -10,43 +10,49 @@
 
 ---
 
-Конфигурация бота ./constant.ini :
-
-[BASE]
+# [BASE]
 
 HOST = https://www.lbkex.net
 
 PORT = 80
 
-[WEBSOCKET]
+# [WEBSOCKET]
 
 URL = wss://www.lbkex.net/ws/V2/
 
-[API]
+# [API]
 
 APIKEY = «Создаётся в личном кабинете LBank»
 
 SECRTKEY = «Создаётся в личном кабинете LBank»
 
-[START_STOP]
+# [START_STOP]
 
 START_STOP = START
 
-[FEES]
+# [LIMITS]
+
+ORDERS = 200
+
+COINS = 10000
+
+DOLLARS = 0
+
+# [FEES]
 
 TAKERFEE = 0.1
 
-[SIZE]
+# [SIZE]
 
 FIXED = True
 
-SIZE = 1000
+SIZE = 1500
 
-STEP = 0.00025
+STEP = 0.00005
 
-[STEP]
+# [STEP]
 
-SIZESTEP = 1000 0.00025
+SIZESTEP = 1500 0.00005
 
 ---
 Применение новых значений происходит без перезагрузки бота, после сохранения изменений в файле ./constant.ini
